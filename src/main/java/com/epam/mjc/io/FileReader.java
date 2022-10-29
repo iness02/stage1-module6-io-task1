@@ -9,7 +9,6 @@ import java.util.Arrays;
 import java.util.List;
 
 
-
 public class FileReader {
 
     public Profile getDataFromFile(File file) {
@@ -19,12 +18,10 @@ public class FileReader {
         List<String> value = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new java.io.FileReader(file))) {
             while ((line = reader.readLine()) != null) {
-                String[] keyValuePair = line.split(":",2);
+                String[] keyValuePair = line.split(":", 2);
                 System.out.println(Arrays.toString(keyValuePair));
                 value.add(keyValuePair[1].trim());
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
