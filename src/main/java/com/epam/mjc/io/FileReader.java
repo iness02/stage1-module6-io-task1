@@ -2,10 +2,8 @@ package com.epam.mjc.io;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -19,7 +17,6 @@ public class FileReader {
         try (BufferedReader reader = new BufferedReader(new java.io.FileReader(file))) {
             while ((line = reader.readLine()) != null) {
                 String[] keyValuePair = line.split(":", 2);
-                System.out.println(Arrays.toString(keyValuePair));
                 value.add(keyValuePair[1].trim());
             }
         } catch (IOException e) {
